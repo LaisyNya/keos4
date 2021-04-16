@@ -260,7 +260,7 @@ async function starts() {
 					ownerB: '[❗] Este comando solo lo usa ShanBot! ❌',
 					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo! ❌',
 					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador! ❌',
-                                        daftarB: `「REGISTRATE AWEVONAO」\n\nHOLA PA!\n\nNo estas registrado en mi base de datos 😳 \n\nComando : ${prefix}daftar Nombre\nEjemplo : ${prefix}daftar Shanduy
+                                        daftarB: `「NECESITAS REGISTRATE PRIMERO」\n\nHOLA! \n\nNo estas registrado en mi base de datos \n\nComando : ${prefix}daftar Nombre\nEjemplo : ${prefix}daftar Shanduy
 `,
 				}
 			}
@@ -268,7 +268,7 @@ async function starts() {
         		const bisakah = ['Bisa','Tidak Bisa']
 		        const kapankah = ['Hari Lagi','Minggu Lagi','Bulan Lagi','Tahun Lagi']
 			const botNumber = client.user.jid
-			const ownerNumber = ["593997889284@s.whatsapp.net"] // replace this with your number
+			const ownerNumber = ["526568631077@s.whatsapp.net"] // replace this with your number
 			const nomorOwner = [ownerNumber]
 			const isGroup = from.endsWith('@g.us')
 			const totalchat = await client.chats.all()
@@ -286,7 +286,7 @@ async function starts() {
 			const isOwner = ownerNumber.includes(sender)
                         const isUser = user.includes(sender)
                         const isLevelingOn = isGroup ? _leveling.includes(groupId) : false
-                        const NomerOwner = '593997889284@s.whatsapp.net'
+                        const NomerOwner = '526568631077@s.whatsapp.net'
                         /******ApiKey Input******/
                         const BarBarKey = 'TU CLAVE API'
                         /******End of ApiKey Input******/
@@ -316,7 +316,7 @@ async function starts() {
                 addLevelingXp(sender, amountXp)
                 if (requiredXp <= getLevelingXp(sender)) {
                     addLevelingLevel(sender, 1)
-                    await reply(`*「 LEVEL UP 」*\n\n➸ *Nombre*: ${sender}\n➸ *XP*: ${getLevelingXp(sender)}\n➸ *Level*: ${getLevel} -> ${getLevelingLevel(sender)}\n\nFelicidades weon!! 🎉🎉`)
+                    await reply(`*「 LEVEL UP 」*\n\n➸ *Nombre*: ${sender}\n➸ *XP*: ${getLevelingXp(sender)}\n➸ *Level*: ${getLevel} -> ${getLevelingLevel(sender)}\n\nFelicidades!! 🎉🎉`)
                 }
             } catch (err) {
                 console.error(err)
@@ -379,13 +379,13 @@ async function starts() {
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `Ok pa, quitando cargo de admin :\n`
+							teks += `Ok, quitando cargo de admin :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					} else {
-						mentions(`Ok pa, retirado del puesto de administrador @${mentioned[0].split('@')[0]}\n*${groupMetadata.subject}*_`, mentioned, true)
+						mentions(`Ok, retirado del puesto de administrador @${mentioned[0].split('@')[0]}\n*${groupMetadata.subject}*_`, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					}
 					break
@@ -565,29 +565,7 @@ async function starts() {
 			                if (!isUser) return reply(mess.only.daftarB)
 					anu = await fetchJson(`https://arugaz.my.id/api/wikien?q=${tels}`, {method: 'get'})
 					reply(anu.result)
-					break				
-				case 'ytmp3':
-					if (args.length < 1) return reply('Donde esta la URL?')
-					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://mhankbarbar.tech/api/yta?url=${args[0]}&apiKey=${BarBarKey}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					teks = `❏ *Título* : ${anu.title}\n❏ *Tamaño del archivo* : ${anu.filesize}\n\nEspera un minuto bro, el audio se está enviando...`
-					thumb = await getBuffer(anu.thumb)
-					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
-					break
-				case 'ytmp4':
-					if (args.length < 1) return reply('Donde esta la URL?')
-					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					teks = `*❏ Título* : ${anu.title}\n\n*EL VIDEO SE ESTÁ ENVIANDO, NO SPAM PEDAZO DE DOWN*`
-					thumb = await getBuffer(anu.thumb)
-					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
-					break
+					break			
 				case 'trendtwit':
 					client.updatePresence(from, Presence.composing) 
                                         if (!isUser) return reply(mess.only.daftarB)
@@ -807,7 +785,7 @@ async function starts() {
 						teks += `╠➥ @${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
-					mentions('╔══✪〘 Mencionar A Todos 〙✪══\n╠➥'+teks+'╚═〘 ShanBot 〙', members_id, true)
+					mentions('╔══✪〘 Mencionar A Todos 〙✪══\n╠➥'+teks+'╚═〘 Keos 〙', members_id, true)
 					break
                 case 'tagall2':
 				client.updatePresence(from, Presence.composing) 
@@ -820,7 +798,7 @@ async function starts() {
 						teks += `╠➥ ${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
-					client.sendMessage(from, '╔══✪〘 Mencionar A Todos 〙✪══\n╠➥'+teks+'╚═〘 ShanBot 〙', text, {quoted: mek})
+					client.sendMessage(from, '╔══✪〘 Mencionar A Todos 〙✪══\n╠➥'+teks+'╚═〘 Keos 〙', text, {quoted: mek})
 					break
                 case 'tagall3':
 				client.updatePresence(from, Presence.composing) 
@@ -833,7 +811,7 @@ async function starts() {
 						teks += `╠➥ https://wa.me/${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
-					client.sendMessage(from, '╔══✪〘 Mencionar A Todos 〙✪══\n╠➥'+teks+'╚═〘 ShanBot 〙', text, {detectLinks: false, quoted: mek})
+					client.sendMessage(from, '╔══✪〘 Mencionar A Todos 〙✪══\n╠➥'+teks+'╚═〘 Keos 〙', text, {detectLinks: false, quoted: mek})
 					break
                         case 'tagall4':
 				client.updatePresence(from, Presence.composing) 
@@ -846,7 +824,7 @@ async function starts() {
 						teks += `╠➥ ${mem.jid.split('@')[0]}@c.us\n`
 						members_id.push(mem.jid)
 					}
-					client.sendMessage(from, '╔══✪〘 Mencionar A Todos 〙✪══\n╠➥'+teks+'╚═〘 ShanBot 〙', text, {quoted: mek})
+					client.sendMessage(from, '╔══✪〘 Mencionar A Todos 〙✪══\n╠➥'+teks+'╚═〘 Keos 〙', text, {quoted: mek})
 					break
                 case 'tagall5':
 				client.updatePresence(from, Presence.composing) 
@@ -859,7 +837,7 @@ async function starts() {
 						teks += `╠➥ ${mem.jid.split('@')[0]}@s.whatsapp.net\n`
 						members_id.push(mem.jid)
 					}
-					reply('╔══✪〘 Mencionando A Todos 〙✪══\n╠➥'+teks+'╚═〘 ShanBot 〙')
+					reply('╔══✪〘 Mencionando A Todos 〙✪══\n╠➥'+teks+'╚═〘 Keos 〙')
 					break
 				case 'send':
 					var pc = body.slice(6)
@@ -979,7 +957,7 @@ async function starts() {
 				  case 'ownergroup':
                client.updatePresence(from, Presence.composing) 
               options = {
-          text: `El homosexual de este grupo es : @${from.split("-")[0]}`,
+          text: `El owner del grupo es: @${from.split("-")[0]}`,
           contextInfo: { mentionedJid: [from] }
            }
            client.sendMessage(from, options, text, { quoted: mek } )
@@ -1049,31 +1027,6 @@ async function starts() {
 		           }
 	           })
                   break
-                 case 'linkgroup':
-				case 'linkgrup':
-				case 'linkgc':
-				    client.updatePresence(from, Presence.composing) 
-				    if (!isGroup) return reply(mess.only.group)
-                                     if (!isUser) return reply(mess.only.daftarB)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					linkgc = await client.groupInviteCode (from)
-					yeh = `https://chat.whatsapp.com/${linkgc}\n\nLink Group *${groupName}*`
-					client.sendMessage(from, yeh, text, {quoted: mek, detectLinks: false})
-					break
-                case 'qrcode':
-                buff = await getBuffer(`https://api.qrserver.com/v1/create-qr-code/?data=${body.slice(8)}&size=1080%C3%971080`)
-				client.sendMessage(from, buff, image, {quoted: mek})
-				break
-				case 'ocr':
-					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await client.downloadAndSaveMediaMessage(encmedia)
-						reply(mess.wait)
-						await recognize(media, {lang: 'eng+ind', oem: 1, psm: 3})
-							.then(teks => {
-								reply(teks.trim())
-								fs.unlinkSync(media)
-							})
 							.catch(err => {
 								reply(err.message)
 								fs.unlinkSync(media)
@@ -1996,7 +1949,7 @@ async function starts() {
 						client.updateProfilePicture(botNumber, buffer)
 						mentions(`La foto de perfil se actualizó correctamente con la foto de perfil @${id.split('@')[0]}`, [jid], true)
 					} catch (e) {
-						reply('Fallido mi pana')
+						reply('Fallido')
 					}
 					break
                                 /*case 'magernulis':
