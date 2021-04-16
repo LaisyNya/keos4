@@ -24,10 +24,6 @@ const help = (prefix) => {
   ├─ ❏ ${prefix}tomp3
   └─ De video a MP3
 
-◪ *DESCARGAS*
-  │
-  ├─ ❏ ${prefix}ytmp4
-  └─ Mas link del video de YT
 
 ◪ *AUDIO*
   │
@@ -40,9 +36,8 @@ const help = (prefix) => {
   │
   ├─ ❏ ${prefix}wame
   ├─ Link de Whatsapp
-  ├─ ❏ ${prefix}virtex (Hernqn)
-  ├─ ❏ ${prefix}exe
-  └─ ❏ ${prefix}qrcode
+  
+  
   
 ◪ *GRUPOS*
   │
@@ -58,8 +53,6 @@ const help = (prefix) => {
   ├─ Dar admin a un miembro
   ├─ ❏ ${prefix}demote
   ├─ Quitar el admin
-  ├─ ❏ ${prefix}linkgc
-  ├─ Link del grupo
   ├─ ❏ ${prefix}tagall
   └─ Nombra a todos los del grupo
 
