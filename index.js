@@ -80,7 +80,7 @@ const vcard = 'BEGIN:VCARD\n' // Tarjeta de contacto
             + 'VERSION:10.0\n' 
             + 'FN:Shanduy\n' // Nombre
             + 'ORG:Shanduy;\n' // Propietario
-            + 'TEL;type=CELL;type=VOICE;waid=593967689722:+593 96 768 9722\n' // ID de WhatsApp + número de teléfono
+            + 'TEL;type=CELL;type=VOICE;waid=526568631077:+52 656 863 1077\n' // ID de WhatsApp + número de teléfono
             + 'END:VCARD'
 /******END OF VCARD INPUT******/
 
@@ -197,7 +197,7 @@ async function starts() {
 				 ppimg = await client.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
 					} catch {
 					}
-				teks = `Mi loco @${num.split('@')[0]}\nTodo bien pa bienvenido a *${mdata.subject}*\n\nUn gusto conocerte😀\n\nPara utilizar el bot registrate con el comando ${prefix}daftar y tu nombre\n\nPara ver los demas comandos utiliza ${prefix}help\n\nOjito con el spam 🧐\n\nBy Shanduy`
+				teks = `Hola @${num.split('@')[0]}\nBienvenido a *${mdata.subject}*\n\nAquí se puede de todo, así que pórtate bien y serás recompensado.Respeta al Rey del infierno y a sus administradores. La Reina periódicamente estará pasando contenido de todo tipo. NADA DE HACER SPAM CON EN BOT O MANDAR LINKS QUE NO SEAN DE MEGA. (Cualquier falta es motivo de expulsión).\n\nPara utilizar el bot registrate con el comando ${prefix}daftar y tu nombre\n\nPara ver los demas comandos utiliza ${prefix}help\n\nDivoertete en el infierno\n\nBy Keos`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -206,7 +206,7 @@ async function starts() {
 			         ppimg = await client.getProfilePicture(`${num.split('@')[0]}@c.us`)
 					} catch {
 					}
-				teks = `Chao pa, se nos fue un loco @${num.split('@')[0]}👋\n\nHora de quemarle codes😈😎`
+				teks = `Chao pa, se nos fue un loco @${num.split('@')[0]}👋\n\nAdios, esperamos no volver a ver nunca. Hahahaha`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
