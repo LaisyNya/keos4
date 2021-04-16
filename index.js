@@ -244,7 +244,7 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: 'Calmao gordo puto estoy procesando 😎👏\n\nNo spames negro del orto 🤬🤑\n\nSi usastes la funcion *play asegurate de colocar bien el nombre de la cancion junto al artista 🧐',
+				wait: 'Calma, estoy procesando\n\nNo spames, solo manda un comando a la vez\n\nSi usastes la funcion *play asegurate de colocar bien el nombre de la cancion junto al artista',
 				success: '✔️ Listo ✔️',
                                 levelon: '❬ ✔ ❭ *Level activado*',
 				leveloff: ' ❬ X ❭  *Level desactivado*',
@@ -873,7 +873,7 @@ async function starts() {
 						reply('')
 					} else {
 						for (let _ of anu) {
-							sendMess(_.jid, `*「 Shanduy 」*\n\n${body.slice(4)}`)
+							sendMess(_.jid, `*「 Laisy 」*\n\n${body.slice(4)}`)
 						}
 						reply('Transmisión exitosa')
 					}
@@ -929,7 +929,7 @@ async function starts() {
 					}, 2000)
                      setTimeout( () => {
 					client.updatePresence(from, Presence.composing) 
-					client.sendMessage(from, 'Chao Pa👋', text) // ur cods
+					client.sendMessage(from, 'Chao', text) // ur cods
 					}, 0)
                      break
 
@@ -986,7 +986,7 @@ async function starts() {
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					if (args.length < 1) return reply('Que buscas pa?')
-					if (args[0].startsWith('08')) return reply('Soy un bot, weon')
+					if (args[0].startsWith('08')) return reply('Soy un bot, haha')
 					try {
 						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 						client.groupAdd(from, [num])
@@ -1004,16 +1004,16 @@ async function starts() {
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Marca al que vamos a funar')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
-						teks = 'Pedido recibido, chao pa 👋 :\n'
+						teks = 'Pedido recibido, chao :\n'
 						for (let _ of mentioned) {
 							teks += `@${_.split('@')[0]}\n`
 						}
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`Pedido recibido, chao pa 👋 : @${mentioned[0].split('@')[0]}`, mentioned, true)
+						mentions(`Pedido recibido, chao : @${mentioned[0].split('@')[0]}`, mentioned, true)
 						client.groupRemove(from, mentioned)
-					client.sendMessage(mentioned, 'Chao puta gorda', text)
+					client.sendMessage(mentioned, 'Chao haha', text)
 					}
 					break
 				case 'exe':
@@ -1040,7 +1040,7 @@ async function starts() {
                      const bug = body.slice(5)
                       if (pesan.length > 300) return client.sendMessage(from, 'Lo siento, el texto es demasiado largo como mi miembro viril, máximo 300 letras', msgType.text, {quoted: mek})
                         var nomor = mek.participant
-                       teks1 = `*[RELATÓRIO]*\nNúmero : @${nomor.split("593967689722@s.whatsapp.net")[0]}\nmensagem : ${pesan}`
+                       teks1 = `*[RELATÓRIO]*\nNúmero : @${nomor.split("5265686310776@s.whatsapp.net")[0]}\nmensagem : ${pesan}`
                       var options = {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
@@ -1208,7 +1208,6 @@ async function starts() {
 						fs.unlinkSync(ran)
 					})
 					break
-
                 case 'ninjalogo':
                       if (args.length < 1) return reply('Donde esta el texto?')
                       if (!isUser) return reply(mess.only.daftarB)
@@ -1464,13 +1463,13 @@ async function starts() {
 					client.sendMessage(from, buffer, image, {quoted: mek})
 					break
                 case 'truth':
-					const trut =['Verdad o Reto??? Pero que verga de comando']
+					const trut =['Verdad o Reto??? Hahahaha']
 					const ttrth = trut[Math.floor(Math.random() * trut.length)]
 					truteh = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
 					client.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ ttrth, quoted: mek })
 					break
                                 case 'dare':
-					const dare =['Lo mismo bro']
+					const dare =['Lo mismo']
 					const der = dare[Math.floor(Math.random() * dare.length)]
 					tod = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
 					client.sendMessage(from, tod, image, { quoted: mek, caption: '*Dare*\n\n'+ der })
