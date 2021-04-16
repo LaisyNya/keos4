@@ -24,7 +24,6 @@ const help = (prefix) => {
   ├─ ❏ ${prefix}tomp3
   └─ De video a MP3
 
-
 ◪ *AUDIO*
   │
   ├─ ❏ ${prefix}play
@@ -35,9 +34,7 @@ const help = (prefix) => {
 ◪ *OTROS*
   │
   ├─ ❏ ${prefix}wame
-  ├─ Link de Whatsapp
-  
-  
+  └─ Link de Whatsapp
   
 ◪ *GRUPOS*
   │
